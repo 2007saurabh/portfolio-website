@@ -55,7 +55,7 @@ img {
 /* ==================== HEADER ==================== */
 
 header {
-    background-color: var(--white);
+    background-color: var(rgb(99, 255, 99));
 
     border-bottom: 1px solid var(--border);
 }
