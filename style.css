@@ -1,0 +1,460 @@
+/* ==================== CSS VARIABLES ==================== */
+
+:root {
+    --primary: #2563eb;
+    --primary-dark: #1d4ed8;
+
+    --dark: #111827;
+    --text: #374151;
+    --light-text: #6b7280;
+
+    --background: #f8fafc;
+    --white: #ffffff;
+
+    --border: #e5e7eb;
+}
+
+
+/* ==================== RESET ==================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* ==================== GLOBAL STYLES ==================== */
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+
+    color: var(--text);
+    background-color: var(--background);
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+
+/* ==================== HEADER ==================== */
+
+header {
+    background-color: var(--white);
+
+    border-bottom: 1px solid var(--border);
+}
+
+.navbar {
+    max-width: 1100px;
+    margin: auto;
+
+    padding: 20px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    color: var(--dark);
+
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.nav-links {
+    display: flex;
+    gap: 25px;
+}
+
+.nav-links a {
+    color: var(--text);
+
+    font-weight: 500;
+
+    transition: color 0.2s ease;
+}
+
+.nav-links a:hover {
+    color: var(--primary);
+}
+
+
+/* ==================== HERO ==================== */
+
+.hero {
+    max-width: 1100px;
+    min-height: 80vh;
+
+    margin: auto;
+    padding: 80px 20px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    gap: 50px;
+}
+
+.hero-content {
+    flex: 1;
+}
+
+.intro {
+    color: var(--primary);
+
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.hero h1 {
+    color: var(--dark);
+
+    font-size: 52px;
+    line-height: 1.1;
+
+    margin: 10px 0;
+}
+
+.hero h2 {
+    color: var(--text);
+
+    font-size: 28px;
+
+    margin-bottom: 20px;
+}
+
+.hero-description {
+    max-width: 550px;
+
+    color: var(--light-text);
+
+    margin-bottom: 30px;
+}
+
+.hero-image {
+    flex: 0 0 300px;
+}
+
+.hero-image img {
+    width: 300px;
+    height: 300px;
+
+    object-fit: cover;
+
+    border-radius: 50%;
+
+    border: 5px solid var(--white);
+
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+
+/* ==================== BUTTON ==================== */
+
+.btn {
+    display: inline-block;
+
+    padding: 12px 22px;
+
+    color: var(--white);
+    background-color: var(--primary);
+
+    border: none;
+    border-radius: 8px;
+
+    font-size: 16px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        background-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.btn:hover {
+    background-color: var(--primary-dark);
+
+    transform: translateY(-2px);
+}
+
+
+/* ==================== COMMON SECTION ==================== */
+
+.section {
+    max-width: 1100px;
+
+    margin: auto;
+
+    padding: 80px 20px;
+}
+
+.section-title {
+    position: relative;
+
+    color: var(--dark);
+
+    font-size: 32px;
+
+    margin-bottom: 30px;
+}
+
+.section-title::after {
+    content: "";
+
+    display: block;
+
+    width: 50px;
+    height: 4px;
+
+    margin-top: 8px;
+
+    background-color: var(--primary);
+
+    border-radius: 5px;
+}
+
+
+/* ==================== ABOUT ==================== */
+
+#about p {
+    max-width: 800px;
+
+    color: var(--light-text);
+
+    margin-bottom: 15px;
+}
+
+
+/* ==================== SKILLS ==================== */
+
+.skills-list {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 15px;
+}
+
+.skills-list li {
+    padding: 10px 18px;
+
+    background-color: var(--white);
+
+    border: 1px solid var(--border);
+
+    border-radius: 20px;
+
+    font-weight: 500;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.skills-list li:hover {
+    transform: translateY(-3px);
+
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+}
+
+
+/* ==================== PROJECTS ==================== */
+
+.projects {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 20px;
+}
+
+.project-card {
+    padding: 25px;
+
+    background-color: var(--white);
+
+    border: 1px solid var(--border);
+
+    border-radius: 12px;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+.project-card h3 {
+    color: var(--dark);
+
+    font-size: 22px;
+
+    margin-bottom: 10px;
+}
+
+.project-card p {
+    color: var(--light-text);
+
+    margin-bottom: 20px;
+}
+
+.project-link {
+    color: var(--primary);
+
+    font-weight: 600;
+}
+
+.project-link:hover {
+    color: var(--primary-dark);
+}
+
+
+/* ==================== CONTACT FORM ==================== */
+
+.contact-form {
+    max-width: 600px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+
+    margin-bottom: 6px;
+
+    color: var(--dark);
+
+    font-weight: 600;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+
+    padding: 12px 15px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 8px;
+
+    background-color: var(--white);
+
+    font-size: 16px;
+
+    outline: none;
+
+    transition: border-color 0.2s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: var(--primary);
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+
+
+/* ==================== FOOTER ==================== */
+
+footer {
+    padding: 30px 20px;
+
+    text-align: center;
+
+    color: var(--light-text);
+
+    background-color: var(--white);
+
+    border-top: 1px solid var(--border);
+}
+
+
+/* ==================== RESPONSIVE DESIGN ==================== */
+
+@media (max-width: 768px) {
+
+    /* Navbar */
+
+    .navbar {
+        flex-direction: column;
+
+        gap: 20px;
+    }
+
+    .nav-links {
+        gap: 15px;
+
+        flex-wrap: wrap;
+
+        justify-content: center;
+    }
+
+
+    /* Hero */
+
+    .hero {
+        flex-direction: column;
+
+        text-align: center;
+
+        padding-top: 60px;
+    }
+
+    .hero h1 {
+        font-size: 40px;
+    }
+
+    .hero h2 {
+        font-size: 24px;
+    }
+
+    .hero-description {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .hero-image {
+        flex: none;
+    }
+
+
+    /* Projects */
+
+    .projects {
+        grid-template-columns: 1fr;
+    }
+
+
+    /* Sections */
+
+    .section {
+        padding: 60px 20px;
+    }
+
+}
