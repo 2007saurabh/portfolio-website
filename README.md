@@ -2,7 +2,6 @@
 
 Welcome to the source code for my personal portfolio website! This platform serves as a central hub to showcase my professional background, technical projects, skills, and ways to get in touch with me.
 
-🔗 **Live Demo:** [https://2007saurabh.github.io/portfolio](https://2007saurabhe.github.io/practice) 
 
 ---
 
