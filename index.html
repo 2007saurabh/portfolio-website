@@ -22,7 +22,7 @@
 
     <!-- ==================== HEADER ==================== -->
 
-    <header>
+    <header class="site-header">
         <nav class="navbar">
 
             <a href="#" class="logo">DevProfile</a>
@@ -45,6 +45,10 @@
                 </li>
             </ul>
 
+            <button class="theme-toggle" type="button" aria-label="Toggle dark mode">
+                ☀️
+            </button>
+
         </nav>
     </header>
 
@@ -65,10 +69,10 @@
 
                 <h2>Frontend Developer</h2>
 
-                <p class="hero-description">
-                    I build modern, responsive and user-friendly
-                    web applications using modern frontend technologies.
+                <p class="hero-description" data-text="I build modern, responsive and user-friendly web applications using modern frontend technologies.">
+                    I build modern, responsive and user-friendly web applications using modern frontend technologies.
                 </p>
+                <br>
 
                 <a href="#projects" class="btn">
                     View My Projects
@@ -96,14 +100,15 @@
             <h2 class="section-title">About Me</h2>
 
             <p>
-                I am a Computer Science student passionate about
-                frontend development, problem solving and software
-                engineering.
+                I am a Computer Science student and Frontend Developer 
+                passionate about building modern, responsive, and user-friendly web applications. 
+                
             </p>
 
             <p>
-                I enjoy building real-world applications and learning
-                new technologies to solve practical problems.
+                I enjoy turning complex problems into clean, intuitive, and performant digital experiences. 
+                Constantly eager to learn and explore new technologies, 
+                I love working on real-world projects that solve practical problems and make an impact.
             </p>
 
         </section>
@@ -140,14 +145,14 @@
 
                 <article class="project-card">
 
-                    <h3>JobGenie</h3>
+                    <h3>PrepQuiz</h3>
 
                     <p>
-                        A platform that helps students discover
-                        relevant job opportunities.
+                        A platform that helps students to practice 
+                        Quantitative aptitude questions.
                     </p>
 
-                    <a href="#" class="project-link">
+                    <a href="https://prepquiz.lovable.app" class="project-link">
                         View Project →
                     </a>
 
@@ -163,7 +168,7 @@
                         students improve their technical skills.
                     </p>
 
-                    <a href="#" class="project-link">
+                    <a href="https://skilltrek.lovable.app" class="project-link">
                         View Project →
                     </a>
 
@@ -272,6 +277,75 @@
     </div>
     <p class="copyright">&copy; 2026 Saurabh Yadav. All rights reserved.</p>
 </footer>
+
+    <script>
+        const heroDescription = document.querySelector('.hero-description');
+        const themeToggle = document.querySelector('.theme-toggle');
+
+        function triggerTyping(element) {
+            if (!element || element.dataset.typing === 'true') return;
+
+            element.dataset.typing = 'true';
+            const text = element.dataset.text || element.textContent.trim();
+            element.textContent = '';
+            element.classList.add('typing-active');
+
+            let index = 0;
+            const type = () => {
+                if (index <= text.length) {
+                    element.textContent = text.slice(0, index);
+                    index++;
+                    setTimeout(type, 35);
+                } else {
+                    element.dataset.typing = 'false';
+                    element.classList.remove('typing-active');
+                    element.classList.add('typing-complete');
+                }
+            };
+
+            type();
+        }
+
+        if (heroDescription) {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        triggerTyping(entry.target);
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.5 });
+
+            heroDescription.addEventListener('mouseenter', () => {
+                triggerTyping(heroDescription);
+            });
+
+            observer.observe(heroDescription);
+        }
+
+        const applyTheme = (isDark) => {
+            document.body.classList.toggle('dark-mode', isDark);
+            if (themeToggle) {
+                themeToggle.textContent = isDark ? '🌙' : '☀️';
+                themeToggle.setAttribute('aria-label', isDark ? 'Switch to light mode' : 'Switch to dark mode');
+            }
+        };
+
+        const savedTheme = localStorage.getItem('portfolio-theme');
+        if (savedTheme === 'dark') {
+            applyTheme(true);
+        } else {
+            applyTheme(false);
+        }
+
+        if (themeToggle) {
+            themeToggle.addEventListener('click', () => {
+                const isDark = !document.body.classList.contains('dark-mode');
+                localStorage.setItem('portfolio-theme', isDark ? 'dark' : 'light');
+                applyTheme(isDark);
+            });
+        }
+    </script>
 
 </body>
 
