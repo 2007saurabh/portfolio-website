@@ -38,6 +38,16 @@ body {
     color: var(--text);
     background-color: var(--background);
     overflow-x: hidden;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body.dark-mode {
+    --dark: #f8fafc;
+    --text: #dbeafe;
+    --light-text: #cbd5e1;
+    --background: #0f172a;
+    --white: #1e293b;
+    --border: #334155;
 }
 
 main {
@@ -63,6 +73,11 @@ img {
 header {
     background: linear-gradient(135deg, #9ef29a 0%, #d7ffd7 100%);
     border-bottom: 1px solid var(--border);
+    transition: background 0.3s ease, border-color 0.3s ease;
+}
+
+body.dark-mode header {
+    background: linear-gradient(135deg, #172554 0%, #0f172a 100%);
 }
 
 .navbar {
@@ -95,6 +110,21 @@ header {
     color: var(--primary);
 }
 
+.theme-toggle {
+    width: 42px;
+    height: 42px;
+    border: 1px solid var(--border);
+    border-radius: 50%;
+    color: var(--dark);
+    background: rgba(255, 255, 255, 0.55);
+    cursor: pointer;
+    font-size: 1.1rem;
+}
+
+body.dark-mode .theme-toggle {
+    background: #1e293b;
+}
+
 
 /* ==================== HERO ==================== */
 .hero {
@@ -108,6 +138,11 @@ header {
     align-items: center;
     gap: 50px;
     flex-wrap: wrap;
+    transition: background 0.3s ease;
+}
+
+body.dark-mode .hero {
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
 }
 
 .hero-content {
@@ -213,6 +248,10 @@ header {
 .about, 
 section:not(.hero) {
     background-color: #E5E5E5;
+}
+
+body.dark-mode section:not(.hero) {
+    background-color: #111827;
 }
 
 .section {
@@ -435,13 +474,20 @@ footer {
 
 .social-links {
     display: flex;
-    justify-content: right;
+    justify-content: flex-end;
     gap: 20px;
-    
+    flex-wrap: wrap;
 }
 
 .social-links a {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
     font-weight: 500;
+}
+
+.social-links i {
+    font-size: 1.1rem;
 }
 
 .copyright {
