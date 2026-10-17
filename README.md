@@ -1,26 +1,44 @@
-# Portfolio Website
+# Saurabh Yadav | Portfolio Website
 
-Welcome to my personal portfolio website! 👋
+A personal portfolio website showcasing my projects, technical skills, certifications, achievements, and contact information.
 
-This website showcases my:
+[![Website](https://img.shields.io/badge/Live%20Demo-View%20Website-blue)](https://your-live-demo-link.com)
+[![GitHub](https://img.shields.io/badge/GitHub-2007saurabh-181717?logo=github)](https://github.com/2007saurabh)
 
-* 💻 Projects
-* 🛠️ Technical Skills
-* 📜 Certifications
-* 🏆 Achievements
-* 📫 Contact Information
+## About Me
 
-### Tech Stack
+Hi, I’m Saurabh Yadav — a developer passionate about building meaningful digital experiences. This portfolio highlights my work, technical expertise, and professional milestones.
 
-* HTML
-* CSS
-* JavaScript
+## Highlights
 
-### Author
+- 💻 Featured projects
+- 🛠️ Skills and technologies
+- 📜 Certifications
+- 🏆 Achievements
+- 📫 Contact information
 
-**Saurabh Yadav**
+## Tech Stack
 
-* GitHub: https://github.com/2007saurabh
-* LinkedIn: https://www.linkedin.com/in/saurabh-yadav-7658472a5/
+- HTML5
+- CSS3
+- JavaScript
 
-⭐ Feel free to explore the repository!
+## Features
+
+- Responsive design
+- Clean and modern layout
+- Easy navigation
+- Portfolio sections for projects and achievements
+- Contact links for professional networking
+
+## Project Structure
+
+```bash
+portfolio-website/
+├── index.html
+├── styles.css
+├── script.js
+├── assets/
+│   ├── images/
+│   └── icons/
+└── README.md
